@@ -1,0 +1,38 @@
+<h1>Friend List</h1>
+</br>
+
+<table class="table table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Telegram</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_apps.each do |test_app| %>
+      <tr>
+        <td><%= test_app.first_name %></td>
+        <td><%= test_app.last_name %></td>
+        <td><%= test_app.email %></td>
+        <td><%= test_app.phone %></td>
+        <td>
+          <a href="https://t.me/<%= test_app.telegram %>" class="btn btn-outline-secondary">
+            @<%= test_app.telegram %>
+          </a>
+        </td>
+        <td><%= link_to 'Show', test_app, class:"btn btn-secondary" %></td>
+        <td><%= link_to 'Edit', edit_test_app_path(test_app), class:"btn btn-secondary" %></td>
+        <td><%= link_to 'Delete', test_app, class:"btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'New Friend', new_test_app_path, class:"btn btn-secondary" %>
+

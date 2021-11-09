@@ -1,0 +1,40 @@
+<br/>
+<%= form_with(model: test_app) do |form| %>
+  <% if test_app.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(test_app.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+      <ul>
+        <% test_app.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field input-group">
+    <%= form.text_field :first_name, class:"form-control", placeholder:"First name" %>
+  </div><br/>
+
+  <div class="field input-group">
+    <%= form.text_field :last_name, class:"form-control", placeholder:"Last name" %>
+  </div><br/>
+
+  <div class="field input-group">
+    <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
+  </div><br/>
+
+  <div class="field input-group">
+    <%= form.text_field :phone, class:"form-control", placeholder:"Phone" %>
+  </div><br/>
+
+  <div class="field input-group">
+    <span class="input-group-text">@</span>
+    <%= form.text_field :telegram, class:"form-control", placeholder:"Telegram" %>
+  </div><br/>
+
+  <div class="actions">
+    <%= form.submit class:"btn btn-outline-dark" %>
+  </div>
+<% end %>
+<br/>

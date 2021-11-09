@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title">
+      <%= @test_app.first_name %> 
+      <%= @test_app.last_name %>
+    </h1>
+    <br/>
+    <p class="card-subtitle text-muted">
+      <%= @test_app.email %> / 
+      <%= @test_app.phone %> / 
+      @<%= @test_app.telegram %>
+    </p>
+    <br/>
+    <%= link_to 'Edit', edit_test_app_path(@test_app), class:"btn btn-secondary"%>
+    <%= link_to 'Back', test_apps_path, class:"btn btn-dark" %>
+  </div>
+</div>
